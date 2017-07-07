@@ -3,11 +3,8 @@ import modellers.abstract_modeller as mdr
 
 class ExplicitNlaModeller(mdr.AbstractModeller):
 
-    def __init__(self, func):
-        super(ExplicitNlaModeller, self).__init__(func)
-
-    def set_variable_values(self, x):
-        self._x = x
+    def __init__(self, func, names):
+        super(ExplicitNlaModeller, self).__init__(func, names)
 
     def evaluate_constraints(self):
-        return self._constraints(self._x)
+        return self._constraints(self._variable_values)

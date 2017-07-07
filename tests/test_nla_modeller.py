@@ -7,7 +7,7 @@ import tests.test_mocks as mock
 class TestExplicitNlaModeller(unittest.TestCase):
 
     def test_evaluate_constraints(self):
-        modeller = mdr.ExplicitNlaModeller(mock.sum_twice_sum)
+        modeller = mdr.ExplicitNlaModeller(mock.sum_twice_sum, ["x1", "x2"])
         modeller.set_variable_values([0, 1])
         actual = modeller.evaluate_constraints()
         expected = [1, 2]

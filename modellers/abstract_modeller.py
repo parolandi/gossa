@@ -1,4 +1,5 @@
 import abc
+import numpy as np
 
 
 class AbstractModeller(abc.ABC):
@@ -13,12 +14,14 @@ class AbstractModeller(abc.ABC):
         evaluate(), for example
     """
 
-    def __init__(self, func):
+    def __init__(self, func, names):
         """
         :param func: the function defining the set of constraints
+        :param names: the variable names
         """
         self._constraints = func
-        self._x = None
+        self._variables = names
+        self._variable_values = self._set_initial_variable_values()
 
     @abc.abstractmethod
     def evaluate_constraints(self):
@@ -27,10 +30,22 @@ class AbstractModeller(abc.ABC):
         :return: an array of constraint values
         """
 
-    @abc.abstractmethod
+    @property
+    def get_variable_values(self):
+        return self._variable_values
+
+    #@variable_values.setter
     def set_variable_values(self, x):
         """
-        Does as it says
         :param x:  an array of variable values
         :return: None
         """
+        self._variable_values = x
+
+    @property
+    def get_variable_names(self):
+        return self._variables
+
+
+    def _set_initial_variable_values(self):
+        return np.zeros(len(self._variables))

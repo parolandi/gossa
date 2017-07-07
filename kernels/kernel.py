@@ -5,11 +5,11 @@ import solvers.nla_solver as slv
 
 class ExplicitNlaKernelFactory(krn.AbstractKernelFactory):
 
-    def __init__(self, func):
-        super(ExplicitNlaKernelFactory, self).__init__(func)
+    def __init__(self, func, names):
+        super(ExplicitNlaKernelFactory, self).__init__(func, names)
 
     def create_kernel_package(self):
-        modeller = mdr.ExplicitNlaModeller(self._func)
+        modeller = mdr.ExplicitNlaModeller(self._func, self._names)
         solver = slv.ExplicitNlaSolver(modeller)
         return modeller, solver
 

@@ -7,7 +7,7 @@ import tests.test_mocks as mock
 class TestKernel(unittest.TestCase):
 
     def test_all(self):
-        afactory = kern.ExplicitNlaKernelFactory(mock.sum_twice_sum)
+        afactory = kern.ExplicitNlaKernelFactory(mock.sum_twice_sum, ["x1", "x2"])
         akernel = kern.Kernel(afactory)
         akernel.set_values([1, 2])
         akernel.compute()
