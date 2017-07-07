@@ -31,7 +31,7 @@ class AbstractModeller(abc.ABC):
         """
 
     @property
-    def get_variable_values(self):
+    def variable_values(self):
         return self._variable_values
 
     #@variable_values.setter
@@ -43,7 +43,7 @@ class AbstractModeller(abc.ABC):
         self._variable_values = x
 
     @property
-    def get_variable_names(self):
+    def variable_names(self):
         return self._variables
 
 

@@ -14,6 +14,11 @@ class TestExplicitNlaModeller(unittest.TestCase):
         [self.assertAlmostEqual(left, right)
             for left, right in zip(actual, expected)]
 
+    def test_getters(self):
+        modeller = mdr.ExplicitNlaModeller(mock.sum_twice_sum, ["x1", "x2"])
+        self.assertTrue(len(modeller.variable_names) == 2)
+        self.assertTrue(len(modeller.variable_values) == 2)
+
 
 if __name__ == '__main__':
     unittest.main()
