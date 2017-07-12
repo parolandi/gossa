@@ -1,6 +1,7 @@
-import kernels.kernel as krn
+import numpy as np
 import modellers.nla_modeller as mdr
 import problems.nla_problem as prb
+import problems.abstract_problem as prbs
 import solvers.nla_solver as slv
 
 
@@ -14,8 +15,8 @@ class ExplicitNlaStudyFactory():
         self._spec = spec
 
     def create_study_package(self):
-        modeller = mdr.ExplicitNlaModeller(self._func)
-        problem = prb.ExplicitNlaProblem(self._spec)
+        problem = prb.ExplicitNlaProblem(prbs.ProblemFactory(self._spec))
+        modeller = mdr.ExplicitNlaModeller(self._func, problem.input_factors)
         solver = slv.ExplicitNlaSolver(modeller)
         return modeller, problem, solver
 
@@ -28,12 +29,13 @@ class Study():
 
     def __init__(self, factory):
         modeller, problem, solver = factory.create_study_package()
-        self.modeller = modeller
+        self._modeller = modeller
         self._problem = problem
         self._solver = solver
 
     def set_context(self):
-        x = self._problem.get_context()
+        context = self._problem.context
+        x = np.asarray(list(context.values()))
         self._modeller.set_variable_values(x)
 
     def execute(self):
