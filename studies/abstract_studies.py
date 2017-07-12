@@ -1,3 +1,4 @@
+import abc
 import numpy as np
 import modellers.nla_modeller as mdr
 import problems.nla_problem as prb
@@ -21,7 +22,7 @@ class ExplicitNlaStudyFactory():
         return modeller, problem, solver
 
 
-class Study():
+class AbstractStudy(abc.ABC):
     """
     Its single responsibility is to find the solution of a problem by invoking the solver
     for a given problem definition
@@ -32,6 +33,7 @@ class Study():
         self._modeller = modeller
         self._problem = problem
         self._solver = solver
+        self._solution = None
 
     def set_context(self):
         context = self._problem.context
@@ -42,4 +44,13 @@ class Study():
         self._solver.solve()
 
     def get_solution(self):
-        return self._solver.get_solution()
+        self._put_solution()
+        return self._solution.get_solution()
+
+    @abc.abstractmethod
+    def _put_solution(self):
+        """
+        Construct the solution depending on the type of study
+        :return: a solution object
+        """
+
