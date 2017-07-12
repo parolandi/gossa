@@ -32,7 +32,11 @@ class Study():
         self._problem = problem
         self._solver = solver
 
-    def __execute__(self):
+    def set_context(self):
+        x = self._problem.get_context()
+        self._modeller.set_variable_values(x)
+
+    def execute(self):
         self._solver.solve()
 
     def get_solution(self):
