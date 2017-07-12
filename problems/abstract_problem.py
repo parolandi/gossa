@@ -10,6 +10,7 @@ class ProblemFactory():
         """
         self._input_factors = spec["input_factors"]
         self._output_responses = spec["output_responses"]
+        self._context = spec["context"]
 
 
 class Problem():
@@ -33,6 +34,8 @@ class Problem():
         self._objective_functions = None
         # model's sources of uncertainty (i.e., due to modeling, not to the system)
         self._model_coefficients = None
+        # parameterization context
+        self._context = factory._context
 
     @property
     def input_factors(self):
@@ -53,3 +56,8 @@ class Problem():
     @property
     def model_coefficients(self):
         return self._model_coefficients
+
+    @property
+    def context(self):
+        return self._context
+
