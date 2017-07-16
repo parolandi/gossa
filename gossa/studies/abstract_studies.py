@@ -1,9 +1,9 @@
 import abc
 import numpy as np
-import modellers.nla_modeller as mdr
-import problems.nla_problem as prb
-import problems.abstract_problem as prbs
-import solvers.nla_solver as slv
+import gossa.modellers.nla_modeller as mdr
+import gossa.problems.nla_problem as prb
+import gossa.problems.abstract_problem as prbs
+import gossa.solvers.nla_solver as slv
 
 
 class ExplicitNlaStudyFactory():

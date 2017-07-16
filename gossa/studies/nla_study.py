@@ -1,5 +1,5 @@
-import studies.abstract_studies as sdy
-import solutions.nla_solution as sln
+import gossa.studies.abstract_studies as sdy
+import gossa.solutions.nla_solution as sln
 
 
 class ExplicitNlaStudy(sdy.AbstractStudy):

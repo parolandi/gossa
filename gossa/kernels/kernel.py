@@ -1,6 +1,6 @@
-import kernels.abstract_kernel as krn
-import modellers.nla_modeller as mdr
-import solvers.nla_solver as slv
+import gossa.kernels.abstract_kernel as krn
+import gossa.modellers.nla_modeller as mdr
+import gossa.solvers.nla_solver as slv
 
 
 class ExplicitNlaKernelFactory(krn.AbstractKernelFactory):

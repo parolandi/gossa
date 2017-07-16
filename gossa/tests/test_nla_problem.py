@@ -1,7 +1,7 @@
 import unittest
-import problems.nla_problem as prb
+import gossa.problems.nla_problem as prb
 
-import problems.abstract_problem as aprb
+import gossa.problems.abstract_problem as aprb
 
 
 class TestExplicitNlaProblem(unittest.TestCase):
