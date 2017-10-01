@@ -1,8 +1,8 @@
 import unittest
-import solvers.nla_solver as slv
+import gossa.solvers.nla_solver as slv
 
-import modellers.nla_modeller as mdr
-import tests.test_mocks as mock
+import gossa.modellers.nla_modeller as mdr
+import gossa.tests.test_mocks as mock
 
 
 class TestExplicitNlaSolver(unittest.TestCase):

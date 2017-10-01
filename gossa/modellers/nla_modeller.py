@@ -1,4 +1,4 @@
-import modellers.abstract_modeller as mdr
+import gossa.modellers.abstract_modeller as mdr
 
 
 class ExplicitNlaModeller(mdr.AbstractModeller):

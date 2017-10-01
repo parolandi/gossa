@@ -1,4 +1,4 @@
-import solvers.abstract_solver as slv
+import gossa.solvers.abstract_solver as slv
 
 
 class ExplicitNlaSolver(slv.AbstractSolver):

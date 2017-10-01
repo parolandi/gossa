@@ -1,7 +1,7 @@
 import unittest
-import modellers.nla_modeller as mdr
+import gossa.modellers.nla_modeller as mdr
 
-import tests.test_mocks as mock
+import gossa.tests.test_mocks as mock
 
 
 class TestExplicitNlaModeller(unittest.TestCase):

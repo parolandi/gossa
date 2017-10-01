@@ -1,8 +1,8 @@
 import unittest
-import studies.abstract_studies as sdys
-import studies.nla_study as sdy
+import gossa.studies.abstract_studies as sdys
+import gossa.studies.nla_study as sdy
 
-import tests.test_mocks as mock
+import gossa.tests.test_mocks as mock
 
 
 class TestExplicitNlaStudy(unittest.TestCase):

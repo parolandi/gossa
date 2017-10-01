@@ -1,7 +1,7 @@
 import unittest
-import kernels.kernel as kern
+import gossa.kernels.kernel as kern
 
-import tests.test_mocks as mock
+import gossa.tests.test_mocks as mock
 
 
 class TestKernel(unittest.TestCase):

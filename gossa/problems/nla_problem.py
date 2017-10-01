@@ -1,4 +1,4 @@
-import problems.abstract_problem as prb
+import gossa.problems.abstract_problem as prb
 
 
 class ExplicitNlaProblem(prb.Problem):
